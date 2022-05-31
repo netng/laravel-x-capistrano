@@ -39,3 +39,29 @@ set :keep_releases, 5
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
+
+
+namespace :deploy do
+  desc "Build"
+    after :updated, :build do
+        on roles(:app) do
+            within release_path  do
+                execute :composer, "install --no-dev --quiet" # install dependencies
+                execute :chmod, "u+x artisan" # make artisan executable
+            end
+        end
+    end
+
+    desc "Restart"
+    task :restart do
+        on roles(:app) do
+            within release_path  do
+                execute :chmod, "-R 777 app/storage/cache"
+                execute :chmod, "-R 777 app/storage/logs"
+                execute :chmod, "-R 777 app/storage/meta"
+                execute :chmod, "-R 777 app/storage/sessions"
+                execute :chmod, "-R 777 app/storage/views"
+            end
+        end
+    end
+end
