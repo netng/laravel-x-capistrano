@@ -192,3 +192,275 @@ and the repository exists.
   INFO [4509d992] Running /usr/bin/env echo "Branch main (at 03c5de84268653214d252d51ee77be4dd293b2a7) deployed as release 20220531042256 by laravel" >> /home/laravel/www/laravel-prod/revisions.log as laravel@10.104.0.3
  DEBUG [4509d992] Command: cd /home/laravel/www/laravel-prod/releases && /usr/bin/env echo "Branch main (at 03c5de84268653214d252d51ee77be4dd293b2a7) deployed as release 20220531042256 by laravel" >> /home/laravel/www/laravel-prod/revisions.log
   INFO [4509d992] Finished in 0.050 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2022-05-31 04:27:13 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [a365cf11] Running /usr/bin/env mkdir -p /tmp as laravel@10.104.0.3
+ DEBUG [a365cf11] Command: /usr/bin/env mkdir -p /tmp
+  INFO [a365cf11] Finished in 0.932 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-81c27b5be689ddaed341.sh 0.0%
+  INFO Uploading /tmp/git-ssh-81c27b5be689ddaed341.sh 100.0%
+  INFO [2da1d421] Running /usr/bin/env chmod 700 /tmp/git-ssh-81c27b5be689ddaed341.sh as laravel@10.104.0.3
+ DEBUG [2da1d421] Command: /usr/bin/env chmod 700 /tmp/git-ssh-81c27b5be689ddaed341.sh
+  INFO [2da1d421] Finished in 0.008 seconds with exit status 0 (successful).
+  INFO [720c0bf4] Running /usr/bin/env git ls-remote git@github.com:netng/laravel-x-capistrano.git HEAD as laravel@10.104.0.3
+ DEBUG [720c0bf4] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-81c27b5be689ddaed341.sh" ; /usr/bin/env git ls-remote git@github.com:netng/laravel-x-capistrano.git HEAD )
+ DEBUG [720c0bf4] 	729d89770e289313719570b52a4b337734362e44	HEAD
+  INFO [720c0bf4] Finished in 2.344 seconds with exit status 0 (successful).
+  INFO [d7b46419] Running /usr/bin/env mkdir -p /home/laravel/www/laravel-prod/shared /home/laravel/www/laravel-prod/releases as laravel@10.104.0.3
+ DEBUG [d7b46419] Command: /usr/bin/env mkdir -p /home/laravel/www/laravel-prod/shared /home/laravel/www/laravel-prod/releases
+  INFO [d7b46419] Finished in 0.010 seconds with exit status 0 (successful).
+  INFO [d88cefe9] Running /usr/bin/env mkdir -p /home/laravel/www/laravel-prod/shared/public /home/laravel/www/laravel-prod/shared/vendor /home/laravel/www/laravel-prod/shared/storage as laravel@10.104.0.3
+ DEBUG [d88cefe9] Command: /usr/bin/env mkdir -p /home/laravel/www/laravel-prod/shared/public /home/laravel/www/laravel-prod/shared/vendor /home/laravel/www/laravel-prod/shared/storage
+  INFO [d88cefe9] Finished in 0.008 seconds with exit status 0 (successful).
+  INFO [00ef4e9c] Running /usr/bin/env mkdir -p /home/laravel/www/laravel-prod/shared as laravel@10.104.0.3
+ DEBUG [00ef4e9c] Command: /usr/bin/env mkdir -p /home/laravel/www/laravel-prod/shared
+  INFO [00ef4e9c] Finished in 0.052 seconds with exit status 0 (successful).
+ DEBUG [e3172286] Running [ -f /home/laravel/www/laravel-prod/shared/.env ] as laravel@10.104.0.3
+ DEBUG [e3172286] Command: [ -f /home/laravel/www/laravel-prod/shared/.env ]
+ DEBUG [e3172286] Finished in 0.007 seconds with exit status 0 (successful).
+ DEBUG [32cf82bb] Running [ -f /home/laravel/www/laravel-prod/current/REVISION ] as laravel@10.104.0.3
+ DEBUG [32cf82bb] Command: [ -f /home/laravel/www/laravel-prod/current/REVISION ]
+ DEBUG [32cf82bb] Finished in 0.013 seconds with exit status 0 (successful).
+ DEBUG [32d58c68] Running /usr/bin/env cat /home/laravel/www/laravel-prod/current/REVISION 2>/dev/null as laravel@10.104.0.3
+ DEBUG [32d58c68] Command: /usr/bin/env cat /home/laravel/www/laravel-prod/current/REVISION 2>/dev/null
+ DEBUG [32d58c68] 	03c5de84268653214d252d51ee77be4dd293b2a7
+ DEBUG [32d58c68] Finished in 0.009 seconds with exit status 0 (successful).
+ DEBUG [6fd82cb2] Running [ -f /home/laravel/www/laravel-prod/repo/HEAD ] as laravel@10.104.0.3
+ DEBUG [6fd82cb2] Command: [ -f /home/laravel/www/laravel-prod/repo/HEAD ]
+ DEBUG [6fd82cb2] Finished in 0.050 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/laravel/www/laravel-prod/repo
+ DEBUG [4fff6dc8] Running if test ! -d /home/laravel/www/laravel-prod/repo; then echo "Directory does not exist '/home/laravel/www/laravel-prod/repo'" 1>&2; false; fi as laravel@10.104.0.3
+ DEBUG [4fff6dc8] Command: if test ! -d /home/laravel/www/laravel-prod/repo; then echo "Directory does not exist '/home/laravel/www/laravel-prod/repo'" 1>&2; false; fi
+ DEBUG [4fff6dc8] Finished in 0.008 seconds with exit status 0 (successful).
+  INFO [aec30a80] Running /usr/bin/env git remote set-url origin git@github.com:netng/laravel-x-capistrano.git as laravel@10.104.0.3
+ DEBUG [aec30a80] Command: cd /home/laravel/www/laravel-prod/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-81c27b5be689ddaed341.sh" ; /usr/bin/env git remote set-url origin git@github.com:netng/laravel-x-capistrano.git )
+  INFO [aec30a80] Finished in 0.053 seconds with exit status 0 (successful).
+  INFO [cf69fa3a] Running /usr/bin/env git remote update --prune as laravel@10.104.0.3
+ DEBUG [cf69fa3a] Command: cd /home/laravel/www/laravel-prod/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-81c27b5be689ddaed341.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [cf69fa3a] 	Fetching origin
+ DEBUG [cf69fa3a] 	From github.com:netng/laravel-x-capistrano
+   03c5de8..729d897  main       -> main
+  INFO [cf69fa3a] Finished in 2.620 seconds with exit status 0 (successful).
+ DEBUG [95ed6a72] Running if test ! -d /home/laravel/www/laravel-prod/repo; then echo "Directory does not exist '/home/laravel/www/laravel-prod/repo'" 1>&2; false; fi as laravel@10.104.0.3
+ DEBUG [95ed6a72] Command: if test ! -d /home/laravel/www/laravel-prod/repo; then echo "Directory does not exist '/home/laravel/www/laravel-prod/repo'" 1>&2; false; fi
+ DEBUG [95ed6a72] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO [5274ee0f] Running /usr/bin/env mkdir -p /home/laravel/www/laravel-prod/releases/20220531042718 as laravel@10.104.0.3
+ DEBUG [5274ee0f] Command: cd /home/laravel/www/laravel-prod/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-81c27b5be689ddaed341.sh" ; /usr/bin/env mkdir -p /home/laravel/www/laravel-prod/releases/20220531042718 )
+  INFO [5274ee0f] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO [4881c7a3] Running /usr/bin/env git archive main | /usr/bin/env tar -x -f - -C /home/laravel/www/laravel-prod/releases/20220531042718 as laravel@10.104.0.3
+ DEBUG [4881c7a3] Command: cd /home/laravel/www/laravel-prod/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-81c27b5be689ddaed341.sh" ; /usr/bin/env git archive main | /usr/bin/env tar -x -f - -C /home/laravel/www/laravel-prod/releases/20220531042718 )
+  INFO [4881c7a3] Finished in 0.024 seconds with exit status 0 (successful).
+ DEBUG [646182bd] Running if test ! -d /home/laravel/www/laravel-prod/repo; then echo "Directory does not exist '/home/laravel/www/laravel-prod/repo'" 1>&2; false; fi as laravel@10.104.0.3
+ DEBUG [646182bd] Command: if test ! -d /home/laravel/www/laravel-prod/repo; then echo "Directory does not exist '/home/laravel/www/laravel-prod/repo'" 1>&2; false; fi
+ DEBUG [646182bd] Finished in 0.006 seconds with exit status 0 (successful).
+ DEBUG [813d7d67] Running /usr/bin/env git rev-list --max-count=1 main as laravel@10.104.0.3
+ DEBUG [813d7d67] Command: cd /home/laravel/www/laravel-prod/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-81c27b5be689ddaed341.sh" ; /usr/bin/env git rev-list --max-count=1 main )
+ DEBUG [813d7d67] 	729d89770e289313719570b52a4b337734362e44
+ DEBUG [813d7d67] Finished in 0.052 seconds with exit status 0 (successful).
+ DEBUG [b888d9b1] Running if test ! -d /home/laravel/www/laravel-prod/releases/20220531042718; then echo "Directory does not exist '/home/laravel/www/laravel-prod/releases/20220531042718'" 1>&2; false; fi as laravel@10.104.0.3
+ DEBUG [b888d9b1] Command: if test ! -d /home/laravel/www/laravel-prod/releases/20220531042718; then echo "Directory does not exist '/home/laravel/www/laravel-prod/releases/20220531042718'" 1>&2; false; fi
+ DEBUG [b888d9b1] Finished in 0.006 seconds with exit status 0 (successful).
+  INFO [3aeeb820] Running /usr/bin/env echo "729d89770e289313719570b52a4b337734362e44" > REVISION as laravel@10.104.0.3
+ DEBUG [3aeeb820] Command: cd /home/laravel/www/laravel-prod/releases/20220531042718 && /usr/bin/env echo "729d89770e289313719570b52a4b337734362e44" > REVISION
+  INFO [3aeeb820] Finished in 0.008 seconds with exit status 0 (successful).
+  INFO [75833332] Running /usr/bin/env mkdir -p /home/laravel/www/laravel-prod/releases/20220531042718 as laravel@10.104.0.3
+ DEBUG [75833332] Command: /usr/bin/env mkdir -p /home/laravel/www/laravel-prod/releases/20220531042718
+  INFO [75833332] Finished in 0.009 seconds with exit status 0 (successful).
+ DEBUG [2cdc602c] Running [ -L /home/laravel/www/laravel-prod/releases/20220531042718/.env ] as laravel@10.104.0.3
+ DEBUG [2cdc602c] Command: [ -L /home/laravel/www/laravel-prod/releases/20220531042718/.env ]
+ DEBUG [2cdc602c] Finished in 0.006 seconds with exit status 1 (failed).
+ DEBUG [a16a5c77] Running [ -f /home/laravel/www/laravel-prod/releases/20220531042718/.env ] as laravel@10.104.0.3
+ DEBUG [a16a5c77] Command: [ -f /home/laravel/www/laravel-prod/releases/20220531042718/.env ]
+ DEBUG [a16a5c77] Finished in 0.049 seconds with exit status 1 (failed).
+  INFO [7b7aadac] Running /usr/bin/env ln -s /home/laravel/www/laravel-prod/shared/.env /home/laravel/www/laravel-prod/releases/20220531042718/.env as laravel@10.104.0.3
+ DEBUG [7b7aadac] Command: /usr/bin/env ln -s /home/laravel/www/laravel-prod/shared/.env /home/laravel/www/laravel-prod/releases/20220531042718/.env
+  INFO [7b7aadac] Finished in 0.011 seconds with exit status 0 (successful).
+  INFO [d12b95f0] Running /usr/bin/env mkdir -p /home/laravel/www/laravel-prod/releases/20220531042718 as laravel@10.104.0.3
+ DEBUG [d12b95f0] Command: /usr/bin/env mkdir -p /home/laravel/www/laravel-prod/releases/20220531042718
+  INFO [d12b95f0] Finished in 0.009 seconds with exit status 0 (successful).
+ DEBUG [9a959648] Running [ -L /home/laravel/www/laravel-prod/releases/20220531042718/public ] as laravel@10.104.0.3
+ DEBUG [9a959648] Command: [ -L /home/laravel/www/laravel-prod/releases/20220531042718/public ]
+ DEBUG [9a959648] Finished in 0.048 seconds with exit status 1 (failed).
+ DEBUG [22c1b71c] Running [ -d /home/laravel/www/laravel-prod/releases/20220531042718/public ] as laravel@10.104.0.3
+ DEBUG [22c1b71c] Command: [ -d /home/laravel/www/laravel-prod/releases/20220531042718/public ]
+ DEBUG [22c1b71c] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO [693a1b05] Running /usr/bin/env rm -rf /home/laravel/www/laravel-prod/releases/20220531042718/public as laravel@10.104.0.3
+ DEBUG [693a1b05] Command: /usr/bin/env rm -rf /home/laravel/www/laravel-prod/releases/20220531042718/public
+  INFO [693a1b05] Finished in 0.008 seconds with exit status 0 (successful).
+  INFO [25e3aabf] Running /usr/bin/env ln -s /home/laravel/www/laravel-prod/shared/public /home/laravel/www/laravel-prod/releases/20220531042718/public as laravel@10.104.0.3
+ DEBUG [25e3aabf] Command: /usr/bin/env ln -s /home/laravel/www/laravel-prod/shared/public /home/laravel/www/laravel-prod/releases/20220531042718/public
+  INFO [25e3aabf] Finished in 0.056 seconds with exit status 0 (successful).
+ DEBUG [21743224] Running [ -L /home/laravel/www/laravel-prod/releases/20220531042718/vendor ] as laravel@10.104.0.3
+ DEBUG [21743224] Command: [ -L /home/laravel/www/laravel-prod/releases/20220531042718/vendor ]
+ DEBUG [21743224] Finished in 0.010 seconds with exit status 1 (failed).
+ DEBUG [16e2983a] Running [ -d /home/laravel/www/laravel-prod/releases/20220531042718/vendor ] as laravel@10.104.0.3
+ DEBUG [16e2983a] Command: [ -d /home/laravel/www/laravel-prod/releases/20220531042718/vendor ]
+ DEBUG [16e2983a] Finished in 0.048 seconds with exit status 1 (failed).
+  INFO [3bfbca6f] Running /usr/bin/env ln -s /home/laravel/www/laravel-prod/shared/vendor /home/laravel/www/laravel-prod/releases/20220531042718/vendor as laravel@10.104.0.3
+ DEBUG [3bfbca6f] Command: /usr/bin/env ln -s /home/laravel/www/laravel-prod/shared/vendor /home/laravel/www/laravel-prod/releases/20220531042718/vendor
+  INFO [3bfbca6f] Finished in 0.009 seconds with exit status 0 (successful).
+ DEBUG [d103bf12] Running [ -L /home/laravel/www/laravel-prod/releases/20220531042718/storage ] as laravel@10.104.0.3
+ DEBUG [d103bf12] Command: [ -L /home/laravel/www/laravel-prod/releases/20220531042718/storage ]
+ DEBUG [d103bf12] Finished in 0.009 seconds with exit status 1 (failed).
+ DEBUG [d349dd76] Running [ -d /home/laravel/www/laravel-prod/releases/20220531042718/storage ] as laravel@10.104.0.3
+ DEBUG [d349dd76] Command: [ -d /home/laravel/www/laravel-prod/releases/20220531042718/storage ]
+ DEBUG [d349dd76] Finished in 0.049 seconds with exit status 0 (successful).
+  INFO [cfde08ab] Running /usr/bin/env rm -rf /home/laravel/www/laravel-prod/releases/20220531042718/storage as laravel@10.104.0.3
+ DEBUG [cfde08ab] Command: /usr/bin/env rm -rf /home/laravel/www/laravel-prod/releases/20220531042718/storage
+  INFO [cfde08ab] Finished in 0.011 seconds with exit status 0 (successful).
+  INFO [5c3cc368] Running /usr/bin/env ln -s /home/laravel/www/laravel-prod/shared/storage /home/laravel/www/laravel-prod/releases/20220531042718/storage as laravel@10.104.0.3
+ DEBUG [5c3cc368] Command: /usr/bin/env ln -s /home/laravel/www/laravel-prod/shared/storage /home/laravel/www/laravel-prod/releases/20220531042718/storage
+  INFO [5c3cc368] Finished in 0.053 seconds with exit status 0 (successful).
+ DEBUG [c41d2311] Running if test ! -d /home/laravel/www/laravel-prod/releases/20220531042718; then echo "Directory does not exist '/home/laravel/www/laravel-prod/releases/20220531042718'" 1>&2; false; fi as laravel@10.104.0.3
+ DEBUG [c41d2311] Command: if test ! -d /home/laravel/www/laravel-prod/releases/20220531042718; then echo "Directory does not exist '/home/laravel/www/laravel-prod/releases/20220531042718'" 1>&2; false; fi
+ DEBUG [c41d2311] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO [0762494e] Running /usr/bin/env composer install --no-dev --quiet as laravel@10.104.0.3
+ DEBUG [0762494e] Command: cd /home/laravel/www/laravel-prod/releases/20220531042718 && /usr/bin/env composer install --no-dev --quiet
+ DEBUG [0762494e] 	/usr/bin/env: 
+ DEBUG [0762494e] 	‘composer’
+ DEBUG [0762494e] 	: No such file or directory
+ DEBUG [0762494e] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2022-05-31 04:28:21 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [5a390274] Running /usr/bin/env mkdir -p /tmp as laravel@10.104.0.3
+ DEBUG [5a390274] Command: /usr/bin/env mkdir -p /tmp
+  INFO [5a390274] Finished in 1.166 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-b9602fdc1c3156ce5ff0.sh 0.0%
+  INFO Uploading /tmp/git-ssh-b9602fdc1c3156ce5ff0.sh 100.0%
+  INFO [de8123db] Running /usr/bin/env chmod 700 /tmp/git-ssh-b9602fdc1c3156ce5ff0.sh as laravel@10.104.0.3
+ DEBUG [de8123db] Command: /usr/bin/env chmod 700 /tmp/git-ssh-b9602fdc1c3156ce5ff0.sh
+  INFO [de8123db] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [7b5efea8] Running /usr/bin/env git ls-remote git@github.com:netng/laravel-x-capistrano.git HEAD as laravel@10.104.0.3
+ DEBUG [7b5efea8] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-b9602fdc1c3156ce5ff0.sh" ; /usr/bin/env git ls-remote git@github.com:netng/laravel-x-capistrano.git HEAD )
+ DEBUG [7b5efea8] 	729d89770e289313719570b52a4b337734362e44	HEAD
+  INFO [7b5efea8] Finished in 2.411 seconds with exit status 0 (successful).
+  INFO [419b775b] Running /usr/bin/env mkdir -p /home/laravel/www/laravel-prod/shared /home/laravel/www/laravel-prod/releases as laravel@10.104.0.3
+ DEBUG [419b775b] Command: /usr/bin/env mkdir -p /home/laravel/www/laravel-prod/shared /home/laravel/www/laravel-prod/releases
+  INFO [419b775b] Finished in 0.010 seconds with exit status 0 (successful).
+  INFO [c0407d31] Running /usr/bin/env mkdir -p /home/laravel/www/laravel-prod/shared/public /home/laravel/www/laravel-prod/shared/vendor /home/laravel/www/laravel-prod/shared/storage as laravel@10.104.0.3
+ DEBUG [c0407d31] Command: /usr/bin/env mkdir -p /home/laravel/www/laravel-prod/shared/public /home/laravel/www/laravel-prod/shared/vendor /home/laravel/www/laravel-prod/shared/storage
+  INFO [c0407d31] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [c870a4b6] Running /usr/bin/env mkdir -p /home/laravel/www/laravel-prod/shared as laravel@10.104.0.3
+ DEBUG [c870a4b6] Command: /usr/bin/env mkdir -p /home/laravel/www/laravel-prod/shared
+  INFO [c870a4b6] Finished in 0.009 seconds with exit status 0 (successful).
+ DEBUG [94dc2323] Running [ -f /home/laravel/www/laravel-prod/shared/.env ] as laravel@10.104.0.3
+ DEBUG [94dc2323] Command: [ -f /home/laravel/www/laravel-prod/shared/.env ]
+ DEBUG [94dc2323] Finished in 0.048 seconds with exit status 0 (successful).
+ DEBUG [6daaba99] Running [ -f /home/laravel/www/laravel-prod/current/REVISION ] as laravel@10.104.0.3
+ DEBUG [6daaba99] Command: [ -f /home/laravel/www/laravel-prod/current/REVISION ]
+ DEBUG [6daaba99] Finished in 0.011 seconds with exit status 0 (successful).
+ DEBUG [2459d832] Running /usr/bin/env cat /home/laravel/www/laravel-prod/current/REVISION 2>/dev/null as laravel@10.104.0.3
+ DEBUG [2459d832] Command: /usr/bin/env cat /home/laravel/www/laravel-prod/current/REVISION 2>/dev/null
+ DEBUG [2459d832] 	03c5de84268653214d252d51ee77be4dd293b2a7
+ DEBUG [2459d832] Finished in 0.009 seconds with exit status 0 (successful).
+ DEBUG [1d61bc9c] Running [ -f /home/laravel/www/laravel-prod/repo/HEAD ] as laravel@10.104.0.3
+ DEBUG [1d61bc9c] Command: [ -f /home/laravel/www/laravel-prod/repo/HEAD ]
+ DEBUG [1d61bc9c] Finished in 0.050 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/laravel/www/laravel-prod/repo
+ DEBUG [4ebf472e] Running if test ! -d /home/laravel/www/laravel-prod/repo; then echo "Directory does not exist '/home/laravel/www/laravel-prod/repo'" 1>&2; false; fi as laravel@10.104.0.3
+ DEBUG [4ebf472e] Command: if test ! -d /home/laravel/www/laravel-prod/repo; then echo "Directory does not exist '/home/laravel/www/laravel-prod/repo'" 1>&2; false; fi
+ DEBUG [4ebf472e] Finished in 0.008 seconds with exit status 0 (successful).
+  INFO [1cdd4b3a] Running /usr/bin/env git remote set-url origin git@github.com:netng/laravel-x-capistrano.git as laravel@10.104.0.3
+ DEBUG [1cdd4b3a] Command: cd /home/laravel/www/laravel-prod/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-b9602fdc1c3156ce5ff0.sh" ; /usr/bin/env git remote set-url origin git@github.com:netng/laravel-x-capistrano.git )
+  INFO [1cdd4b3a] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO [f32076a7] Running /usr/bin/env git remote update --prune as laravel@10.104.0.3
+ DEBUG [f32076a7] Command: cd /home/laravel/www/laravel-prod/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-b9602fdc1c3156ce5ff0.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [f32076a7] 	Fetching origin
+  INFO [f32076a7] Finished in 2.457 seconds with exit status 0 (successful).
+ DEBUG [a30f7bd2] Running if test ! -d /home/laravel/www/laravel-prod/repo; then echo "Directory does not exist '/home/laravel/www/laravel-prod/repo'" 1>&2; false; fi as laravel@10.104.0.3
+ DEBUG [a30f7bd2] Command: if test ! -d /home/laravel/www/laravel-prod/repo; then echo "Directory does not exist '/home/laravel/www/laravel-prod/repo'" 1>&2; false; fi
+ DEBUG [a30f7bd2] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO [453c310e] Running /usr/bin/env mkdir -p /home/laravel/www/laravel-prod/releases/20220531042826 as laravel@10.104.0.3
+ DEBUG [453c310e] Command: cd /home/laravel/www/laravel-prod/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-b9602fdc1c3156ce5ff0.sh" ; /usr/bin/env mkdir -p /home/laravel/www/laravel-prod/releases/20220531042826 )
+  INFO [453c310e] Finished in 0.054 seconds with exit status 0 (successful).
+  INFO [9b20f656] Running /usr/bin/env git archive main | /usr/bin/env tar -x -f - -C /home/laravel/www/laravel-prod/releases/20220531042826 as laravel@10.104.0.3
+ DEBUG [9b20f656] Command: cd /home/laravel/www/laravel-prod/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-b9602fdc1c3156ce5ff0.sh" ; /usr/bin/env git archive main | /usr/bin/env tar -x -f - -C /home/laravel/www/laravel-prod/releases/20220531042826 )
+  INFO [9b20f656] Finished in 0.033 seconds with exit status 0 (successful).
+ DEBUG [e0bbe579] Running if test ! -d /home/laravel/www/laravel-prod/repo; then echo "Directory does not exist '/home/laravel/www/laravel-prod/repo'" 1>&2; false; fi as laravel@10.104.0.3
+ DEBUG [e0bbe579] Command: if test ! -d /home/laravel/www/laravel-prod/repo; then echo "Directory does not exist '/home/laravel/www/laravel-prod/repo'" 1>&2; false; fi
+ DEBUG [e0bbe579] Finished in 0.010 seconds with exit status 0 (successful).
+ DEBUG [2e85eee9] Running /usr/bin/env git rev-list --max-count=1 main as laravel@10.104.0.3
+ DEBUG [2e85eee9] Command: cd /home/laravel/www/laravel-prod/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-b9602fdc1c3156ce5ff0.sh" ; /usr/bin/env git rev-list --max-count=1 main )
+ DEBUG [2e85eee9] 	729d89770e289313719570b52a4b337734362e44
+ DEBUG [2e85eee9] Finished in 0.056 seconds with exit status 0 (successful).
+ DEBUG [056124e7] Running if test ! -d /home/laravel/www/laravel-prod/releases/20220531042826; then echo "Directory does not exist '/home/laravel/www/laravel-prod/releases/20220531042826'" 1>&2; false; fi as laravel@10.104.0.3
+ DEBUG [056124e7] Command: if test ! -d /home/laravel/www/laravel-prod/releases/20220531042826; then echo "Directory does not exist '/home/laravel/www/laravel-prod/releases/20220531042826'" 1>&2; false; fi
+ DEBUG [056124e7] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO [61523111] Running /usr/bin/env echo "729d89770e289313719570b52a4b337734362e44" > REVISION as laravel@10.104.0.3
+ DEBUG [61523111] Command: cd /home/laravel/www/laravel-prod/releases/20220531042826 && /usr/bin/env echo "729d89770e289313719570b52a4b337734362e44" > REVISION
+  INFO [61523111] Finished in 0.014 seconds with exit status 0 (successful).
+  INFO [3772433f] Running /usr/bin/env mkdir -p /home/laravel/www/laravel-prod/releases/20220531042826 as laravel@10.104.0.3
+ DEBUG [3772433f] Command: /usr/bin/env mkdir -p /home/laravel/www/laravel-prod/releases/20220531042826
+  INFO [3772433f] Finished in 0.008 seconds with exit status 0 (successful).
+ DEBUG [bfef6cc6] Running [ -L /home/laravel/www/laravel-prod/releases/20220531042826/.env ] as laravel@10.104.0.3
+ DEBUG [bfef6cc6] Command: [ -L /home/laravel/www/laravel-prod/releases/20220531042826/.env ]
+ DEBUG [bfef6cc6] Finished in 0.049 seconds with exit status 1 (failed).
+ DEBUG [e0fe20fb] Running [ -f /home/laravel/www/laravel-prod/releases/20220531042826/.env ] as laravel@10.104.0.3
+ DEBUG [e0fe20fb] Command: [ -f /home/laravel/www/laravel-prod/releases/20220531042826/.env ]
+ DEBUG [e0fe20fb] Finished in 0.007 seconds with exit status 1 (failed).
+  INFO [75a1feb8] Running /usr/bin/env ln -s /home/laravel/www/laravel-prod/shared/.env /home/laravel/www/laravel-prod/releases/20220531042826/.env as laravel@10.104.0.3
+ DEBUG [75a1feb8] Command: /usr/bin/env ln -s /home/laravel/www/laravel-prod/shared/.env /home/laravel/www/laravel-prod/releases/20220531042826/.env
+  INFO [75a1feb8] Finished in 0.008 seconds with exit status 0 (successful).
+  INFO [9f507011] Running /usr/bin/env mkdir -p /home/laravel/www/laravel-prod/releases/20220531042826 as laravel@10.104.0.3
+ DEBUG [9f507011] Command: /usr/bin/env mkdir -p /home/laravel/www/laravel-prod/releases/20220531042826
+  INFO [9f507011] Finished in 0.049 seconds with exit status 0 (successful).
+ DEBUG [b1b6b923] Running [ -L /home/laravel/www/laravel-prod/releases/20220531042826/public ] as laravel@10.104.0.3
+ DEBUG [b1b6b923] Command: [ -L /home/laravel/www/laravel-prod/releases/20220531042826/public ]
+ DEBUG [b1b6b923] Finished in 0.007 seconds with exit status 1 (failed).
+ DEBUG [d0000573] Running [ -d /home/laravel/www/laravel-prod/releases/20220531042826/public ] as laravel@10.104.0.3
+ DEBUG [d0000573] Command: [ -d /home/laravel/www/laravel-prod/releases/20220531042826/public ]
+ DEBUG [d0000573] Finished in 0.006 seconds with exit status 0 (successful).
+  INFO [3005dee2] Running /usr/bin/env rm -rf /home/laravel/www/laravel-prod/releases/20220531042826/public as laravel@10.104.0.3
+ DEBUG [3005dee2] Command: /usr/bin/env rm -rf /home/laravel/www/laravel-prod/releases/20220531042826/public
+  INFO [3005dee2] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [1d6d3c57] Running /usr/bin/env ln -s /home/laravel/www/laravel-prod/shared/public /home/laravel/www/laravel-prod/releases/20220531042826/public as laravel@10.104.0.3
+ DEBUG [1d6d3c57] Command: /usr/bin/env ln -s /home/laravel/www/laravel-prod/shared/public /home/laravel/www/laravel-prod/releases/20220531042826/public
+  INFO [1d6d3c57] Finished in 0.008 seconds with exit status 0 (successful).
+ DEBUG [4de2a892] Running [ -L /home/laravel/www/laravel-prod/releases/20220531042826/vendor ] as laravel@10.104.0.3
+ DEBUG [4de2a892] Command: [ -L /home/laravel/www/laravel-prod/releases/20220531042826/vendor ]
+ DEBUG [4de2a892] Finished in 0.047 seconds with exit status 1 (failed).
+ DEBUG [53b7cf7c] Running [ -d /home/laravel/www/laravel-prod/releases/20220531042826/vendor ] as laravel@10.104.0.3
+ DEBUG [53b7cf7c] Command: [ -d /home/laravel/www/laravel-prod/releases/20220531042826/vendor ]
+ DEBUG [53b7cf7c] Finished in 0.007 seconds with exit status 1 (failed).
+  INFO [c8fefe8d] Running /usr/bin/env ln -s /home/laravel/www/laravel-prod/shared/vendor /home/laravel/www/laravel-prod/releases/20220531042826/vendor as laravel@10.104.0.3
+ DEBUG [c8fefe8d] Command: /usr/bin/env ln -s /home/laravel/www/laravel-prod/shared/vendor /home/laravel/www/laravel-prod/releases/20220531042826/vendor
+  INFO [c8fefe8d] Finished in 0.008 seconds with exit status 0 (successful).
+ DEBUG [7603e907] Running [ -L /home/laravel/www/laravel-prod/releases/20220531042826/storage ] as laravel@10.104.0.3
+ DEBUG [7603e907] Command: [ -L /home/laravel/www/laravel-prod/releases/20220531042826/storage ]
+ DEBUG [7603e907] Finished in 0.046 seconds with exit status 1 (failed).
+ DEBUG [743737d7] Running [ -d /home/laravel/www/laravel-prod/releases/20220531042826/storage ] as laravel@10.104.0.3
+ DEBUG [743737d7] Command: [ -d /home/laravel/www/laravel-prod/releases/20220531042826/storage ]
+ DEBUG [743737d7] Finished in 0.008 seconds with exit status 0 (successful).
+  INFO [aa2abc6d] Running /usr/bin/env rm -rf /home/laravel/www/laravel-prod/releases/20220531042826/storage as laravel@10.104.0.3
+ DEBUG [aa2abc6d] Command: /usr/bin/env rm -rf /home/laravel/www/laravel-prod/releases/20220531042826/storage
+  INFO [aa2abc6d] Finished in 0.012 seconds with exit status 0 (successful).
+  INFO [c3d7fb94] Running /usr/bin/env ln -s /home/laravel/www/laravel-prod/shared/storage /home/laravel/www/laravel-prod/releases/20220531042826/storage as laravel@10.104.0.3
+ DEBUG [c3d7fb94] Command: /usr/bin/env ln -s /home/laravel/www/laravel-prod/shared/storage /home/laravel/www/laravel-prod/releases/20220531042826/storage
+  INFO [c3d7fb94] Finished in 0.053 seconds with exit status 0 (successful).
+ DEBUG [426a3c04] Running if test ! -d /home/laravel/www/laravel-prod/releases/20220531042826; then echo "Directory does not exist '/home/laravel/www/laravel-prod/releases/20220531042826'" 1>&2; false; fi as laravel@10.104.0.3
+ DEBUG [426a3c04] Command: if test ! -d /home/laravel/www/laravel-prod/releases/20220531042826; then echo "Directory does not exist '/home/laravel/www/laravel-prod/releases/20220531042826'" 1>&2; false; fi
+ DEBUG [426a3c04] Finished in 0.006 seconds with exit status 0 (successful).
+  INFO [575fd2dc] Running /usr/bin/env composer install --no-dev --quiet as laravel@10.104.0.3
+ DEBUG [575fd2dc] Command: cd /home/laravel/www/laravel-prod/releases/20220531042826 && /usr/bin/env composer install --no-dev --quiet
+  INFO [575fd2dc] Finished in 5.938 seconds with exit status 0 (successful).
+  INFO [a1333f3c] Running /usr/bin/env chmod u+x artisan as laravel@10.104.0.3
+ DEBUG [a1333f3c] Command: cd /home/laravel/www/laravel-prod/releases/20220531042826 && /usr/bin/env chmod u+x artisan
+  INFO [a1333f3c] Finished in 0.010 seconds with exit status 0 (successful).
+  INFO [ee9f9823] Running /usr/bin/env ln -s /home/laravel/www/laravel-prod/releases/20220531042826 /home/laravel/www/laravel-prod/releases/current as laravel@10.104.0.3
+ DEBUG [ee9f9823] Command: /usr/bin/env ln -s /home/laravel/www/laravel-prod/releases/20220531042826 /home/laravel/www/laravel-prod/releases/current
+  INFO [ee9f9823] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO [5ec363d1] Running /usr/bin/env mv /home/laravel/www/laravel-prod/releases/current /home/laravel/www/laravel-prod as laravel@10.104.0.3
+ DEBUG [5ec363d1] Command: /usr/bin/env mv /home/laravel/www/laravel-prod/releases/current /home/laravel/www/laravel-prod
+  INFO [5ec363d1] Finished in 0.009 seconds with exit status 0 (successful).
+ DEBUG [8f456a66] Running /usr/bin/env ls -x /home/laravel/www/laravel-prod/releases as laravel@10.104.0.3
+ DEBUG [8f456a66] Command: /usr/bin/env ls -x /home/laravel/www/laravel-prod/releases
+ DEBUG [8f456a66] 	20220531042256	20220531042718	20220531042826
+ DEBUG [8f456a66] Finished in 0.009 seconds with exit status 0 (successful).
+ DEBUG [a9f65ee9] Running if test ! -d /home/laravel/www/laravel-prod/releases; then echo "Directory does not exist '/home/laravel/www/laravel-prod/releases'" 1>&2; false; fi as laravel@10.104.0.3
+ DEBUG [a9f65ee9] Command: if test ! -d /home/laravel/www/laravel-prod/releases; then echo "Directory does not exist '/home/laravel/www/laravel-prod/releases'" 1>&2; false; fi
+ DEBUG [a9f65ee9] Finished in 0.006 seconds with exit status 0 (successful).
+  INFO [5b9cc382] Running /usr/bin/env echo "Branch main (at 729d89770e289313719570b52a4b337734362e44) deployed as release 20220531042826 by laravel" >> /home/laravel/www/laravel-prod/revisions.log as laravel@10.104.0.3
+ DEBUG [5b9cc382] Command: cd /home/laravel/www/laravel-prod/releases && /usr/bin/env echo "Branch main (at 729d89770e289313719570b52a4b337734362e44) deployed as release 20220531042826 by laravel" >> /home/laravel/www/laravel-prod/revisions.log
+  INFO [5b9cc382] Finished in 0.008 seconds with exit status 0 (successful).
